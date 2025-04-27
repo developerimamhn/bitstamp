@@ -4,7 +4,7 @@ import React, { useEffect, useRef,useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import numbeingss from './image/numbeingss.png';
-import linerone from './image/linerone.svg';
+import image3 from './image/image3.png';
 import Image from 'next/image';
 import Link from 'next/link';
 // import { usePathname } from 'next/navigation';
@@ -69,171 +69,124 @@ const features = [
 
 
 const Pagethree = () => {
-    const handleLinkClick = (href) => {
-        setActiveLink(href); 
-    };
-
-
   const wrapperRef = useRef(null); // Outer container
-  const gridItem1Ref = useRef(null); // First grid item
-  const gridItem2Ref = useRef(null); // Second grid item
-  const gridItem3Ref = useRef(null); // Third grid item
-  const titleRef = useRef(null); // "Core Products" title
-  const acquireRef = useRef(null); // "Acquire CRX" section
+  const gridItem1Ref = useRef(null); // First grid item (text content)
+  const acquireRef = useRef(null); // Second grid item (image)
 
   useEffect(() => {
-    const mm = gsap.matchMedia();
+    // Create GSAP context for proper scoping and cleanup
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
 
-    mm.add(
-      {
-        isDesktop: '(min-width: 768px)',
-        isMobile: '(max-width: 767px)',
-      },
-      (context) => {
-        const { isDesktop, isMobile } = context.conditions;
+      mm.add(
+        {
+          isDesktop: '(min-width: 768px)',
+          isMobile: '(max-width: 767px)',
+        },
+        (context) => {
+          const { isDesktop, isMobile } = context.conditions;
 
-        // Main wrapper animation
-        gsap.fromTo(
-          wrapperRef.current,
-          { y: isMobile ? 50 : 100, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: isMobile ? 1 : 1.5,
-            ease: 'power3.out',
+          // Create a timeline for better control and sequencing
+          const tl = gsap.timeline({
             scrollTrigger: {
               trigger: wrapperRef.current,
               start: isMobile ? 'top 90%' : 'top 80%',
-              end: 'top 20%',
+              end: isMobile ? 'bottom 20%' : 'bottom 10%', // Adjusted for smoother completion
               scrub: 0.8,
             },
-          }
-        );
+          });
 
-        // Title animation
-        gsap.fromTo(
-          titleRef.current,
-          { y: 30, opacity: 0, scale: 0.95 },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 1,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: titleRef.current,
-              start: 'top 85%',
-              end: 'top 50%',
-              scrub: 0.8,
-            },
-          }
-        );
-
-        // Grid items animation (individual with slight stagger)
-        [gridItem1Ref, gridItem2Ref, gridItem3Ref].forEach((ref, index) => {
-          gsap.fromTo(
-            ref.current,
-            { y: 50, opacity: 0, scale: 0.9 },
+          // Main wrapper animation (left to right)
+          tl.fromTo(
+            wrapperRef.current,
+            { x: isMobile ? -50 : -100, opacity: 0 },
             {
-              y: 0,
+              x: 0,
+              opacity: 1,
+              duration: 1.5,
+              ease: 'power3.out',
+            },
+            0 // Start at timeline's beginning
+          );
+
+          // First grid item (text content) animation (left to right)
+          tl.fromTo(
+            gridItem1Ref.current,
+            { x: 150, opacity: 0, scale: 0.95 },
+            {
+              x: 0,
               opacity: 1,
               scale: 1,
               duration: 1,
-              delay: index * 0.25, // Manual stagger effect
               ease: 'power3.out',
-              scrollTrigger: {
-                trigger: ref.current,
-                start: 'top 80%',
-                end: 'top 30%',
-                scrub: 0.8,
-              },
-            }
-          );
-        });
-
-        // Acquire CRX section animation
-        gsap.fromTo(
-          acquireRef.current,
-          { y: 50, opacity: 0, scale: 0.95 },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 1.2,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: acquireRef.current,
-              start: 'top 85%',
-              end: 'top 40%',
-              scrub: 0.8,
             },
-          }
-        );
-      }
-    );
+            0.1 // Slight stagger
+          );
 
-    return () => mm.revert(); // Cleanup
+          // Second grid item (image) animation (faster right to left)
+          tl.fromTo(
+            acquireRef.current,
+            { x: 50, opacity: 0, scale: 0.95 },
+            {
+              x: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 0.6, // Faster animation
+              ease: 'power3.out',
+            },
+            0.25 // Stagger for visual hierarchy
+          );
+        }
+      );
+    }, wrapperRef); // Scope animations to wrapperRef for React's strict mode
+
+    // Cleanup GSAP context and animations
+    return () => ctx.revert();
   }, []);
-
-
-
-  // avzd
-
-
-  const itemRefs = useRef([]);
-      
-      // GSAP animation effect
-      useEffect(() => {
-        itemRefs.current.forEach((el, index) => {
-          if (!el) return;
-    
-          gsap.fromTo(
-            el,
-            {
-              autoAlpha: 0,
-              y: 50,
-            },
-            {
-              autoAlpha: 1,
-              y: 0,
-              duration: 2,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: el,
-                start: 'top 100%',
-                toggleActions: 'play none none none',
-              },
-              delay: index * 0.1, // Delay between each item
-            }
-          );
-        });
-      }, []);
-
-
-    
     return (
-        <div id='Blog' className='relative py-[40px] sm:py-[50px] md:py-[60px] lg:py-[90px] xl:py-[120px] 2xl:py-[150px] bg-[#9226E0]'>
-            <div  className='relative container mx-auto'>
-              <div className='grid grid-cols-12'>
-              <h2 className='selfcountopdia text-[28px] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[64px] 2xl:text-[96px] relative z-10 sm:text-left text-center sm:col-start-5 col-span-12 sm:col-span-7'>The security and <br/>
-              support 
-                  <svg xmlns="http://www.w3.org/2000/svg" className='w-2/7 2xl:w-2/7 absolute bottom-[20%] 2xl:-bottom-1  left-0 z-[-2] md:block hidden ' viewBox="0 0 332 138" fill="none">
-                  <path d="M148.334 13.8798C45.2721 35.2154 -5.28003 65.287 0.655468 101.831C1.10805 104.526 1.90707 107.794 2.47438 109.084C8.36909 122.413 23.7291 131.256 47.6096 135.057C72.7766 139.062 105.226 137.813 143.957 131.31C195.159 122.712 246.185 106.503 284.051 86.7914C289.665 83.8332 292.479 82.6889 299.267 80.4573C307.664 77.6618 324.946 71.1067 327.05 69.9136L328.193 69.2598L327.016 69.7094C318.521 72.8154 311.886 75.0632 306.4 76.6982C302.731 77.8181 299.25 78.8645 298.686 79.0852C296.611 79.8535 297.49 78.8241 300.486 76.9773C307.871 72.3359 315.923 65.6931 321.203 59.8515C327.028 53.3726 331.089 45.6362 331.743 39.6894C332.114 36.226 331.174 30.6308 329.762 27.8866C324.236 17.0566 306.785 10.0768 280.521 8.18788C258.77 6.63285 235.128 7.83101 201.405 12.2336L193.555 13.2156L196.737 12.1775C202.091 10.3547 218.305 5.49065 227.536 2.89093C232.319 1.54202 236.371 0.315798 236.503 0.209578C236.664 -0.0273375 231.41 0.602866 212.147 3.12327C199.746 4.74354 160.487 11.3774 148.334 13.8798ZM106.099 33.8206C83.1924 41.4879 71.8628 45.9097 57.7589 52.6029C39.9983 61.0859 25.1428 70.7608 17.4076 78.9882C16.5148 79.9359 15.6296 80.6304 15.4141 80.5406C15.2405 80.4018 16.8875 78.2777 19.0156 75.7368C32.5921 59.9359 60.216 46.3535 104.812 33.6167C108.398 32.5948 109.323 32.7334 106.099 33.8206ZM215.415 18.1115C248.949 14.3706 276.102 14.3887 295.412 18.1171C306.746 20.2872 315.412 24.1652 319.241 28.7712C324.679 35.2067 323.057 44.3393 314.727 54.0943C305.727 64.6337 288.836 75.91 266.89 86.0195C261.082 88.7164 259.612 89.215 253.39 90.6378C224.99 97.2119 208.216 100.532 176.062 105.931C147.952 110.651 135.084 112.475 114.403 114.604C52.6179 121.031 15.6594 116.906 13.3203 103.274C11.5512 92.737 27.6054 76.4781 52.8422 63.2965C82.767 47.6062 120.781 35.3446 171.473 24.9016C178.301 23.5032 207.301 19.0119 215.415 18.1115ZM38.8726 123.297C49.9785 125.001 75.5453 124.824 99.2521 122.817C127.76 120.466 174.436 113.846 193.932 109.439C199.821 108.114 219.945 103.266 225.848 101.729C231.083 100.388 228.659 101.467 220.103 104.205C204.18 109.314 188.614 113.565 171.011 117.613C159.964 120.14 127.177 125.645 117.177 126.652C90.6725 129.296 69.8017 129.399 53.125 127.034C45.8368 125.991 34.4065 123.249 36.1116 122.962C36.2577 122.938 37.4887 123.109 38.8726 123.297Z" fill="#DFFD0A"/>
-                  </svg>
-                  <p className='dontmissing text-[15px] sm:text-[16px] md:text-[20px] lg:text-[24px] xl:text-[30px] 2xl:text-[35px] sm:text-left text-center absolute  2xl:bottom-5 left-0 xl:left-auto xl:right-24 z-[-2] 2xl:block hidden'>You didn&apos;t know you <br className=" md:block hidden"/> were missing</p>
-                  <p className='dontmissing text-[15px] sm:text-[16px] md:text-[20px] lg:text-[24px] xl:text-[30px] 2xl:text-[35px] sm:text-left text-center 2xl:hidden block mt-3.5'>You didn&apos;t know you <br className=" md:hidden hidden"/> were missing</p>
-                  </h2>
-                  
-              </div>
-              <div className='grid grid-cols-12 gap-[1px] sm:gap-[32px] md:gap-[36px] lg:gap-[40px] xl:gap-[48px] 2xl:gap-[50px] pt-[36px] sm:pt-[40px] md:pt-[48px] lg:pt-[64px] xl:pt-[96px] 2xl:pt-[110px]'>
-                  {features.map((feature, index) => (
-                    <div key={index} ref={(el) => (itemRefs.current[index] = el)} className="flex flex-col sm:items-start items-center text-center sm:text-start p-4 col-span-12 sm:col-span-6 md:col-span-3">
-                      <div className="pb-[13px] sm:pb-[16px] md:pb-[20px] lg:pb-[24px] xl:pb-[30px] 2xl:pb-[36px]">{feature.icon}</div>
-                      <h3 className="text-lg font-bold mb-2 featuretitle text-[18px] sm:text-[16px] md:text-[20px] lg:text-[24px] xl:text-[28px] 2xl:text-[32px] pb-[0px] sm:pb-[11px] md:pb-[14px] lg:pb-[15px] xl:pb-[16px] 2xl:pb-[20px]">{feature.title}</h3>
-                      <p className="featuredescription text-[14px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] sm:px-0 px-[10%]">{feature.description}</p>
+        <div id='Blog' className='relative'>
+            <div ref={wrapperRef} className='relative container mx-auto'>
+                <div className="grid grid-cols-12 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 px-4 sm:px-6 lg:px-8">
+                  <div ref={gridItem1Ref} className="col-span-12 sm:col-span-6">
+                    <h2 className="tradines text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[3.5rem] font-bold">
+                      <span className="bg-[#03FC9E] rounded-md px-2 py-1 text-[#15161B]">
+                        Protect yourself
+                      </span>{" "}
+                      from crypto scams
+                    </h2>
+                    <p className="bitstartp text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[20px] pt-[14px] sm:pt-[15px] md:pt-[16px] lg:pt-[20px] xl:pt-[24px] 2xl:pt-[30px]">
+                      Find everything you need to know about how to safely navigate the crypto environment in Bitstamp’s comprehensive guide.
+                    </p>
+                    <div className="flex items-center gap-2 pt-[16px] sm:pt-[20px] md:pt-[24px] lg:pt-[32px] xl:pt-[36px] 2xl:pt-[40px]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-[12px] sm:w-[13px] md:w-[14px] lg:w-[15px] xl:w-[16px] 2xl:w-[20px] "
+                        viewBox="0 0 20 21"
+                        fill="none"
+                      >
+                        <path
+                          d="M20 17.936H0V20.0195H20V17.936ZM11.0667 0.0181885H8.94167V14.1108H11.0667V0.0181885Z"
+                          fill="#FDFCFF"
+                        />
+                        <path
+                          d="M9.99961 15.5862L3.34961 9.06122L4.85794 7.58622L10.0079 12.6362L15.1996 7.54456L16.7079 9.01956L10.0079 15.5862H9.99961Z"
+                          fill="#FDFCFF"
+                        />
+                      </svg>
+                      <p className="artoutsmartins text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] ">
+                        The Art of Outsmarting Crypto Scammers
+                      </p>
                     </div>
-                  ))}
-              </div>
+                  </div>
+                  <div ref={acquireRef} className="col-span-12 sm:col-span-6 flex justify-center">
+                    <Image
+                      className="w-full max-w-md h-auto object-cover"
+                      src={image3} // Replace with actual image path
+                      alt="Crypto scam protection"
+                      priority // Optional: for above-the-fold images
+                    />
+                  </div>
+                </div>
             </div>
         </div>
     );
