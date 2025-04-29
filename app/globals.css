@@ -93,10 +93,32 @@ body {
 
 
 @layer utilities{
+  .learndihnsaz{
+    color: var(--03-fc-9-e, #03FC9E);
+    text-align: center;
+    font-family: "Graphik LCG";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 28.8px */
+  }
+  .cicleone{
+    border-radius: 10px;
+    background: var(--212227, #212227);
+  }
+  .posiningsezx{
+    border-radius: 43px;
+    background: rgba(3, 252, 158, 0.10);
+  }
+  .takeexper{
+    color: var(--fdfcff, #FDFCFF);
+    font-family: "Graphik LCG";
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px; /* 150% */
+  }
   .inturiss{
     color: var(--bdbdbd, #BDBDBD);
     font-family: "Graphik LCG";
-    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 24px; /* 150% */
@@ -162,7 +184,6 @@ body {
   .welcobits {
     color: var(--03-fc-9-e, #03FC9E);
     font-family: "Graphik LCG";
-    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 110%; /* 17.6px */
@@ -679,7 +700,6 @@ background: linear-gradient(180deg, #010214 0%, #010214 16.55%, #4E27BC 63.32%, 
   .privacypolicy{
     color: #9226E0;
     font-family: "Segoe UI";
-    font-size: 28px;
     font-style: normal;
     font-weight: 500;
     line-height: 170%; /* 47.6px */
@@ -1093,7 +1113,6 @@ background: linear-gradient(180deg, #010214 0%, #010214 16.55%, #4E27BC 63.32%, 
 
   .header.scrolled {
     background: #15161B;
-    font-size: #fff;
     /* border-image-source: linear-gradient(90deg, #010214 0%, rgba(55, 57, 82, 0.6) 50.16%, #010214 100%); */
     /* border-bottom-width: 0.78px; */
     /* border-style: solid; */

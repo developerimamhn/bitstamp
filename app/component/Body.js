@@ -6,6 +6,8 @@ import Pagefore from './Pagefore';
 import Pageeight from './Pageeight';
 import Footer from './Footer';
 import Pagefive from './Pagefive';
+import Pagesix from './Pagesix';
+import Pageseven from './Pageseven';
 
 
 const Body = () => {
@@ -17,6 +19,8 @@ const Body = () => {
             <Pagefore/>
             <Pagefive/>
             <Pageeight/>
+            <Pagesix/>
+            <Pageseven/>
             <Footer/>
         </div>
     );

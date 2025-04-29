@@ -162,7 +162,7 @@ const HeroPage = () => {
     return (
         <div id="hero" ref={buttonRef} className='relative'>
           <div className='relative z-[2] overflow-hidden'>
-            <div className='pt-[50px] sm:pt-[24px] md:pt-[32px] lg:pt-[36px] xl:pt-[30px] 2xl:pt-[30px] sm:pb-0 pb-[50px] container mx-auto px-[24px] sm:px-0 w-full flex felx-center justify-center'>
+            <div className='pt-[50px] sm:pt-[81px] md:pt-[32px] lg:pt-[36px] xl:pt-[30px] 2xl:pt-[30px] sm:pb-0 pb-[50px] container mx-auto px-[24px] sm:px-0 w-full flex felx-center justify-center'>
                 <div  className='grid grid-cols-1 sm:grid-cols-2 items-center'>
                   <div className=''>
                     <span className='welcobits'>Welcome to bitstamp</span>

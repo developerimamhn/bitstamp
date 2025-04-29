@@ -158,7 +158,7 @@ const Pageone = () => {
               <div
                 key={card.id}
                 ref={(el) => setCardRef(el, index)}
-                className="borindsas bg-transparent hover:bg-[#212227] duration-300 cursor-pointer p-[32px] sm:p-[36px] md:p-[40px] lg:p-[48px] xl:p-[64px] 2xl:p-[84px] col-span-4 flex items-center justify-center flex-col"
+                className="borindsas bg-transparent hover:bg-[#212227] duration-300 cursor-pointer p-[32px] sm:p-[36px] md:p-[40px] lg:p-[48px] xl:p-[64px] 2xl:p-[84px] col-span-12 sm:col-span-4 flex items-center justify-center flex-col"
               >
                 <Image
                   src={card.imageSrc}
