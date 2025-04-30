@@ -65,7 +65,7 @@ const Pageseven = () => {
 
     return (
         <div className='py-[50px] sm:py-[60px] md:py-[70px] lg:py-[90px] xl:py-[120px] 2xl:py-[150px] overflow-hidden'>
-            <div className='container mx-auto'>
+            <div className='container mx-auto px-6 sm:px-0'>
                 <h2 className="tradines text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[45px] !font-semibold text-center">
                     <span className="bg-[#03FC9E] rounded-md px-2 py-1 text-[#15161B] ">
                     Reliable   
@@ -77,7 +77,7 @@ const Pageseven = () => {
                 Learn about the institutional offer
                 </p>
                 <section className="pt-[24px] sm:pt-[32px] md:pt-[36px] lg:pt-[40px] xl:pt-[48px] 2xl:pt-[60px]">
-                    <div className="mx-auto px-4 sm:px-8 md:px-16 lg:px-[200px]">
+                    <div className="mx-auto sm:px-8 md:px-16 lg:px-[200px]">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-[14px] sm:gap-[15px] md:gap-[16px] lg:gap-[20px] xl:gap-[24px] 2xl:gap-[30px]">
                             <div id="logo1" className="flex justify-center">
                                 <svg className='w-full' viewBox="0 0 382 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +103,7 @@ const Pageseven = () => {
                 </section>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-[35px] mt-[40px] sm:mt-[60px] md:mt-[90px] lg:mt-[120px] xl:mt-[150px] 2xl:mt-[180px]'>
                     <div className='col-span-7 mt-[17px]'>
-                      <div className='grid grid-rows-1 gap-[20px] sm:gap-[24px] md:gap-[32px] lg:gap-[36px] xl:gap-[40px] 2xl:gap-[50px] px-6 sm:px-0'>
+                      <div className='grid grid-rows-1 gap-[20px] sm:gap-[24px] md:gap-[32px] lg:gap-[36px] xl:gap-[40px] 2xl:gap-[50px]'>
                         <div className='col-span-4'>
                             <h2 className="tradines text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[45px] !font-semibold pb-[24px] sm:pb-[32px] md:pb-[36px] lg:pb-[40px] xl:pb-[48px] 2xl:pb-[60px]">
                                 <span className="bg-[#03FC9E] rounded-md px-2 py-1 text-[#15161B] ">
@@ -151,10 +151,10 @@ const Pageseven = () => {
                       </filter>
                       </defs>
                       </svg>
-                        <Image src={investing} alt="image is loading..."/>
+                        <Image className='w-full' src={investing} alt="image is loading..."/>
                     </div>
                 </div>
-                <div className='grid  sm:gap-0 gap-[30px] grid-cols-10 pt-[20px] sm:pt-[24px] md:pt-[32px] lg:pt-[36px] xl:pt-[40px] 2xl:pt-[50px] px-6 sm:px-0'>
+                <div className='grid  sm:gap-0 gap-[30px] grid-cols-10 pt-[20px] sm:pt-[24px] md:pt-[32px] lg:pt-[36px] xl:pt-[40px] 2xl:pt-[50px]'>
                   <div className='flex items-center col-span-10 sm:col-span-6'>
                     <ul className='flex justify-start items-center gap-[13px] sm:gap-[14px] md:gap-[15px] lg:gap-[16px] xl:gap-[20px] 2xl:gap-[25px]'>
                       <button className='buttonauditelt cursor-pointer text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] flex items-center h-[36px] md:h-[40px] lg:h-[44px] xl:h-[48px] 2xl:h-[59px] px-[16px] sm:px-[20px] md:px-[24px] lg:px-[32px] xl:px-[36px] 2xl:px-[40px] group gap-[7.50px]'>

@@ -144,10 +144,10 @@ const Pagefive = () => {
     return () => ctx.revert();
   }, []);
     return (
-        <div id='Blog' className='relative'>
+        <div id='Blog' className='relative  '>
             <div ref={wrapperRef} className='relative container mx-auto'>
                 <div className="grid grid-cols-12 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 px-6 sm:px-0 items-center justify-center">
-                  <div ref={gridItem1Ref} className="col-span-12 sm:col-span-6">
+                  <div ref={gridItem1Ref} className="col-span-12 sm:col-span-6 pb-[20px] sm:pb-0">
                     <h2 className="tradines text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[3.5rem] font-bold">
                       <span className="bg-[#03FC9E] rounded-md px-2 py-1 text-[#15161B]">
                       3 steps   
@@ -161,7 +161,7 @@ const Pagefive = () => {
                     Get started
                     </button>
                   </div>
-                  <div ref={acquireRef} className="col-span-12 sm:col-span-6 flex justify-center">
+                  <div ref={acquireRef} className="col-span-12 sm:col-span-6 flex justify-center ">
                     <Image
                       className="w-full object-cover"
                       src={image8} // Replace with actual image path

@@ -12,7 +12,7 @@ import Pageseven from './Pageseven';
 
 const Body = () => {
     return (
-        <div className='relative'>
+        <div className='relative overflow-hidden'>
             <Pageone/>
             <Pagetwo/>
             <Pagethree/>

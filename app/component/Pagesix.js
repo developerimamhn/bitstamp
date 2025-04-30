@@ -181,7 +181,7 @@ const Pagesix = () => {
   }, []);
 
     return (
-        <div>
+        <div className=''>
             <div className='grid grid-cols-12 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 px-6 sm:px-0 items-center justify-center container mx-auto xl:max-w-none xl:px-0'>
                     <div className="col-span-12 sm:col-span-4 xl:ml-[200px] ml-0">
                     <h2 className="tradines text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[45px] !font-semibold">

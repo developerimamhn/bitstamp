@@ -36,7 +36,7 @@ const Pageone = () => {
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: wrapperRef.current,
-              start: isMobile ? 'top 90%' : 'top 80%',
+              start: isMobile ? 'top 100%' : 'top 100%',
               end: isMobile ? 'bottom 20%' : 'bottom 10%', // Adjusted for smoother completion
               scrub: 0.8,
             },

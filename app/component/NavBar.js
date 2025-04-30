@@ -114,7 +114,7 @@ const NavBar = () => {
                         <LiaBarsSolid className='text-white text-[24px] absolute' />
                     </div>
                 </div>
-                <Link onClick={(e) => handleScrollToTop(e, "")} href='/' className='cursor-pointer flex items-center Froggo-Logo'>
+                <Link onClick={(e) => handleScrollToTop(e, "")} href='/' className='cursor-pointer flex items-center justify-start Froggo-Logo'>
                 <Image className='w-full h-[24px] sm:h-[28px] 2xl:h-[34px]' src={logo} alt=''/></Link> 
 
                 <nav ref={menuRef} className={`navbar-items-main absolute sm:top-0 top-[100%] sm:left-0 sm:relative duration-1000 z-[999] sm:opacity-100 flex justif-start sm:justify-start items-start sm:items-center gap-[16px] sm:gap-[20px] md:gap-[24px] lg:gap-[32px] xl:gap-[36px] 2xl:gap-[40px] sm:bg-transparent bg-[#15161B] sm:flex-row flex-col p-[20px] sm:p-[0] sm:w-fit w-full h-screen sm:h-full pl-[24px] sm:pl-[32px] md:pl-[36px] lg:pl-[40px] xl:pl-[48px] 2xl:pl-[60px]

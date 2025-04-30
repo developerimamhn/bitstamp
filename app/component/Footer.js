@@ -245,7 +245,7 @@ const Footer = () => {
                           ))}
                         </div>
                       </div>
-                      <div className='col-span-9 flex justify-between items-start'>
+                      <div className='col-span-9 grid grid-cols-2 gap-6 sm:gap-0 sm:flex justify-between items-start '>
                         <div className='flex items-start flex-col gap-[14px] sm:gap-[15px] md:gap-[16px] lg:gap-[20px] xl:gap-[24px] 2xl:gap-[30px] justify-start '>
                           <a className='privacypolicy text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[20px] !text-[#FDFCFF]'>About</a>
                             <ul className='flex justify-start flex-col gap-[12px] sm:gap-[13px] md:gap-[14px] lg:gap-[15px] xl:gap-[16px] 2xl:gap-[20px] footeritesm figtree text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]'>

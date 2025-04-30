@@ -162,12 +162,12 @@ const HeroPage = () => {
     return (
         <div id="hero" ref={buttonRef} className='relative'>
           <div className='relative z-[2] overflow-hidden'>
-            <div className='pt-[50px] sm:pt-[81px] md:pt-[32px] lg:pt-[36px] xl:pt-[30px] 2xl:pt-[30px] sm:pb-0 pb-[50px] container mx-auto px-[24px] sm:px-0 w-full flex felx-center justify-center'>
+            <div className='pt-[80px] sm:pt-[81px] md:pt-[32px] lg:pt-[36px] xl:pt-[30px] 2xl:pt-[30px] sm:pb-0 pb-[50px] container mx-auto px-[24px] sm:px-0 w-full flex felx-center justify-center'>
                 <div  className='grid grid-cols-1 sm:grid-cols-2 items-center'>
-                  <div className=''>
-                    <span className='welcobits'>Welcome to bitstamp</span>
-                    <h2 className='tradines text-[32px] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[64px] 2xl:text-[75px]'><span className=' bg-[#03FC9E] rounded-[5px] !text-[#15161B]'>Buy & tradeon</span> the original trusted crypto exchange. </h2>
-                    <p className='bitstartp text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] pt-[14px] sm:pt-[15px] md:pt-[16px] lg:pt-[20px] xl:pt-[24px] 2xl:pt-[30px]'>Bitstamp makes trading easy, fast & reliable. With live customer support, staking andbank-grade security & insurance.Trusted Crypto Exchange Since 2011.</p>
+                  <div className='flex items-center flex-col sm:items-start justify-center sm:justify-start'>
+                    <div className='welcobits  sm:text-start text-center'>Welcome to bitstamp</div>
+                    <h2 className='tradines pt-2 sm:pt-0 text-[24px] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[64px] 2xl:text-[75px]  sm:text-start text-center'><span className=' bg-[#03FC9E] rounded-[5px] !text-[#15161B]'>Buy & tradeon</span> the original trusted crypto exchange. </h2>
+                    <p className='bitstartp text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] pt-[14px] sm:pt-[15px] md:pt-[16px] lg:pt-[20px] xl:pt-[24px] 2xl:pt-[30px]  sm:text-start text-center'>Bitstamp makes trading easy, fast & reliable. With live customer support, staking andbank-grade security & insurance.Trusted Crypto Exchange Since 2011.</p>
                     <button className='buttonaudit cursor-pointer text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] flex items-center h-[36px] md:h-[40px] lg:h-[44px] xl:h-[48px] 2xl:h-[59px] px-[16px] sm:px-[20px] md:px-[24px] lg:px-[32px] xl:px-[36px] 2xl:px-[40px] group gap-[7.50px] mt-[20px] sm:mt-[24px] md:mt-[32px] lg:mt-[36px] xl:mt-[40px] 2xl:mt-[47px]'>
                     Get started
                     </button>
