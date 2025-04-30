@@ -64,7 +64,7 @@ const Pageseven = () => {
 
 
     return (
-        <div className='py-[50px] sm:py-[60px] md:py-[70px] lg:py-[90px] xl:py-[120px] 2xl:py-[150px]'>
+        <div className='py-[50px] sm:py-[60px] md:py-[70px] lg:py-[90px] xl:py-[120px] 2xl:py-[150px] overflow-hidden'>
             <div className='container mx-auto'>
                 <h2 className="tradines text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[45px] !font-semibold text-center">
                     <span className="bg-[#03FC9E] rounded-md px-2 py-1 text-[#15161B] ">
@@ -101,17 +101,18 @@ const Pageseven = () => {
                         </div>
                     </div>
                 </section>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-4 mt-8'>
-                    <div className='col-span-7 grid grid-cols-7'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-[35px] mt-[40px] sm:mt-[60px] md:mt-[90px] lg:mt-[120px] xl:mt-[150px] 2xl:mt-[180px]'>
+                    <div className='col-span-7 mt-[17px]'>
+                      <div className='grid grid-rows-1 gap-[20px] sm:gap-[24px] md:gap-[32px] lg:gap-[36px] xl:gap-[40px] 2xl:gap-[50px] px-6 sm:px-0'>
                         <div className='col-span-4'>
-                            <h2 className="tradines text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[45px] !font-semibold">
+                            <h2 className="tradines text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[45px] !font-semibold pb-[24px] sm:pb-[32px] md:pb-[36px] lg:pb-[40px] xl:pb-[48px] 2xl:pb-[60px]">
                                 <span className="bg-[#03FC9E] rounded-md px-2 py-1 text-[#15161B] ">
                                 Advanced    
                                 </span>{" "}
                                 trading tools
                             </h2>
                             <div className="cicleone bg-transparent hover:bg-[#212227] duration-300 cursor-pointer py-[16px] sm:py-[20px] md:py-[24px] lg:py-[32px] xl:py-[36px] 2xl:py-[42px] pl-[24px] sm:pl-[32px] md:pl-[36px] lg:pl-[40px] xl:pl-[48px] 2xl:pl-[50px] pr-[32px] sm:pr-[36px] md:pr-[40px] lg:pr-[48px] xl:pr-[64px] 2xl:pr-[83px] flex items-center justify-between flex-col gap-6">
-                                <div>
+                                <div className=''>
                                     <div className="eastrasin text-[15px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[20px] 2xl:text-[23px]">
                                     Professional access, non-stop availability
                                     </div>
@@ -123,10 +124,59 @@ const Pageseven = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className="cicleone bg-transparent hover:bg-[#212227] duration-300 cursor-pointer py-[16px] sm:py-[20px] md:py-[24px] lg:py-[32px] xl:py-[36px] 2xl:py-[42px] pl-[24px] sm:pl-[32px] md:pl-[36px] lg:pl-[40px] xl:pl-[48px] 2xl:pl-[50px] pr-[32px] sm:pr-[36px] md:pr-[40px] lg:pr-[48px] xl:pr-[64px] 2xl:pr-[83px] flex items-center justify-between flex-col gap-6 sm:col-start-3 col-span-4 ">
+                                <div className=''>
+                                    <div className="eastrasin text-[15px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[20px] 2xl:text-[23px]">
+                                    Professional access, non-stop availability
+                                    </div>
+                                    <ul className="pt-[14px] sm:pt-[15px] md:pt-[16px] lg:pt-[20px] xl:pt-[24px] 2xl:pt-[30px]">
+                                    <li className="inturiss text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]">
+                                    We provide premium access to crypto trading for both individuals and institutions through high liquidity, reliable order execution and constant uptime.
+                                    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                      </div>
                     </div>
-                    <div className='col-span-3'>
+                    <div className='col-span-3 h-fit relative'>
+                    <svg className='w-[200%] absolute -top-50 -left-50 z-[-2]] 2xl:block hidden' viewBox="0 0 1032 1306" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g filter="url(#filter0_f_214_327)">
+                      <circle cx="653" cy="653" r="153" fill="#03FC9E"/>
+                      </g>
+                      <defs>
+                      <filter id="filter0_f_214_327" x="0" y="0" width="1306" height="1306" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                      <feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur_214_327"/>
+                      </filter>
+                      </defs>
+                      </svg>
                         <Image src={investing} alt="image is loading..."/>
                     </div>
+                </div>
+                <div className='grid  sm:gap-0 gap-[30px] grid-cols-10 pt-[20px] sm:pt-[24px] md:pt-[32px] lg:pt-[36px] xl:pt-[40px] 2xl:pt-[50px] px-6 sm:px-0'>
+                  <div className='flex items-center col-span-10 sm:col-span-6'>
+                    <ul className='flex justify-start items-center gap-[13px] sm:gap-[14px] md:gap-[15px] lg:gap-[16px] xl:gap-[20px] 2xl:gap-[25px]'>
+                      <button className='buttonauditelt cursor-pointer text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] flex items-center h-[36px] md:h-[40px] lg:h-[44px] xl:h-[48px] 2xl:h-[59px] px-[16px] sm:px-[20px] md:px-[24px] lg:px-[32px] xl:px-[36px] 2xl:px-[40px] group gap-[7.50px]'>
+                      more for traders
+                      </button>
+                      <button className='buttonaudit cursor-pointer text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] flex items-center h-[36px] md:h-[40px] lg:h-[44px] xl:h-[48px] 2xl:h-[59px] px-[16px] sm:px-[20px] md:px-[24px] lg:px-[32px] xl:px-[36px] 2xl:px-[40px] group gap-[7.50px]'>
+                      Get started
+                      </button>
+                    </ul>
+                  </div>
+                  <div className="cicleone bg-transparent hover:bg-[#212227] duration-300 cursor-pointer py-[16px] sm:py-[20px] md:py-[24px] lg:py-[32px] xl:py-[36px] 2xl:py-[42px] pl-[24px] sm:pl-[32px] md:pl-[36px] lg:pl-[40px] xl:pl-[48px] 2xl:pl-[50px] pr-[32px] sm:pr-[36px] md:pr-[40px] lg:pr-[48px] xl:pr-[64px] 2xl:pr-[83px] flex items-center justify-between flex-col gap-6 col-span-10 sm:col-span-4">
+                      <div className=''>
+                          <div className="eastrasin text-[15px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[20px] 2xl:text-[23px]">
+                          Professional access, non-stop availability
+                          </div>
+                          <ul className="pt-[14px] sm:pt-[15px] md:pt-[16px] lg:pt-[20px] xl:pt-[24px] 2xl:pt-[30px]">
+                          <li className="inturiss text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]">
+                          We provide premium access to crypto trading for both individuals and institutions through high liquidity, reliable order execution and constant uptime.
+                          </li>
+                          </ul>
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>
