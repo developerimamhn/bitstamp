@@ -45,21 +45,21 @@ const CryptoTable = () => {
       <div className="overflow-x-auto ">
         <table className="w-full text-left">
           <thead>
-            <tr className="allhastinwsaws">
-              <th className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px]">ALL</th>
-              <th className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] sm:block hidden">#</th>
-              <th className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px]">Name</th>
-              <th className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px]">Last Price</th>
-              <th className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] sm:block hidden">24h %</th>
-              <th className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] lg:block hidden">Market Cap</th>
-              <th className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] xl:block hidden">Last 7 Days</th>
-              <th className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] md:block hidden">Actions</th>
+          <tr className="">
+              <th className="p-3 sm:p-4 hidden sm:table-cell" scope="col">ALL</th>
+              <th className="p-3 sm:p-4 hidden sm:table-cell" scope="col">#</th>
+              <th className="p-3 sm:p-4" scope="col">Name</th>
+              <th className="p-3 sm:p-4" scope="col">Last Price</th>
+              <th className="p-3 sm:p-4 hidden sm:table-cell" scope="col">24h %</th>
+              <th className="p-3 sm:p-4 hidden lg:table-cell" scope="col">Market Cap</th>
+              <th className="p-3 sm:p-4 hidden xl:table-cell" scope="col">Last 7 Days</th>
+              <th className="p-3 sm:p-4 hidden md:table-cell" scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
             {cryptoData.map((coin, index) => (
               <tr key={index} className="border-t-[1px] border-[#03fc9d0e] group">
-                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px]">
+                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] hidden sm:table-cell">
                   <span className="">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -79,17 +79,17 @@ const CryptoTable = () => {
                     </svg>
                   </span>
                 </td>
-                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] sm:block hidden ">{coin.rank}</td>
+                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] hidden sm:table-cell">{coin.rank}</td>
                 <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] flex items-center gap-[5px] lg:gap-[8px]">
                 <Image
                     src={coinImages[index]}
                     alt={`${coin.name} icon`}
-                    className="w-[16px] sm:w-[20px] md:w-[24px] lg:w-[32px] xl:w-[36px] 2xl:w-[40px] sm:block hidden"
+                    className="w-[16px] sm:w-[20px] md:w-[24px] lg:w-[32px] xl:w-[36px] 2xl:w-[40px] hidden sm:table-cell"
                   />
                     {coin.name}
                     </td>
                 <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px]">{coin.lastPrice}</td>
-                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] sm:block hidden">
+                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] hidden sm:table-cell">
                   <span
                     className={
                       coin.changePositive ? 'change-positive' : 'change-negative'
@@ -98,8 +98,8 @@ const CryptoTable = () => {
                     {coin.change}
                   </span>
                 </td>
-                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] lg:block hidden">{coin.marketCap}</td>
-                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] xl:block hidden">
+                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] lg:table-cell hidden">{coin.marketCap}</td>
+                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] xl:table-cell hidden">
                   {coin.changePositive ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +166,7 @@ const CryptoTable = () => {
                     </svg>
                   )}
                 </td>
-                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] md:block hidden" >
+                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] hidden md:table-cell" >
                   <button
                     className={`px-[12px] sm:px-[13px] md:px-[14px] lg:px-[15px] xl:px-[16px] 2xl:px-[20px] py-[10px] sm:py-[11px] md:py-[12px] lg:py-[13px] xl:py-[14px] 2xl:py-[15px] cursor-pointer ${
                       index === 2
