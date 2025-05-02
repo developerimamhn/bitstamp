@@ -154,6 +154,28 @@ const Pagetwo = () => {
            <div className='container mx-auto'>
               {/* <Image ref={wrapperRef} src={image2} alt='image2'/> */}
               <CryptoTable/>
+              <button className="peoexgolsss flex items-center gap-[2px] lg:gap-3 cursor-pointer sm:hidden mt-6">
+    VIEW MORE
+    <svg
+      className="w-[12px] sm:w-[13px] md:w-[14px] lg:w-[15px] xl:w-[16px] 2xl:w-[20px]"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M1.75 12C1.75 11.5858 2.08579 11.25 2.5 11.25L20.5007 11.25C20.9149 11.25 21.2507 11.5858 21.2507 12C21.2507 12.4142 20.9149 12.75 20.5007 12.75L2.5 12.75C2.08579 12.75 1.75 12.4142 1.75 12Z"
+        fill="#03FC9E"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M16.0204 5.42388C16.3386 5.1587 16.8115 5.20168 17.0767 5.51988L21.8101 11.1998C22.1964 11.6634 22.1964 12.3367 21.8101 12.8003L17.0767 18.4802C16.8115 18.7984 16.3386 18.8414 16.0204 18.5762C15.7022 18.311 15.6592 17.8381 15.9244 17.5199L20.5244 12L15.9244 6.48018C15.6592 6.16198 15.7022 5.68906 16.0204 5.42388Z"
+        fill="#03FC9E"
+      />
+    </svg>
+  </button>
            </div>
         </div>
     );

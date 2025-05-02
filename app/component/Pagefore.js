@@ -67,8 +67,8 @@ const Pageone = () => {
               ease: 'power3.out',
               scrollTrigger: {
                 trigger: wrapperRef.current,
-                start: isMobile ? 'top 90%' : 'top 80%',
-                end: 'bottom 20%',
+                start: isMobile ? 'top 100%' : 'top 100%',
+                end: 'bottom 100%',
                 scrub: 0.8,
               },
             }

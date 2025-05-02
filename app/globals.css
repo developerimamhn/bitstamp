@@ -94,6 +94,12 @@ body {
 
 
 @layer utilities{
+  .peoexgols {
+    color: #9CA3AF; /* Inactive tab color */
+  }
+  .peoexgols:hover {
+    color: #EAF4FE; /* Hover color */
+  }
   .buttonone{
     border-radius: 6px;
     background: rgba(218, 255, 228, 0.10);

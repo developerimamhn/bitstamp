@@ -69,7 +69,7 @@ const Footer = () => {
           stagger: 0.3,
           scrollTrigger: {
             trigger: '.feature',
-            start: 'top 80%',
+            start: 'top 100%',
             end: 'bottom top',
             toggleActions: 'play none none none'
           }
@@ -86,7 +86,7 @@ const Footer = () => {
           ease: 'ease-in-out',
           scrollTrigger: {
             trigger: '.buttonaudit-3',
-            start: 'top 80%',
+            start: 'top 100%',
             end: 'bottom top',
             toggleActions: 'play none none none'
           }

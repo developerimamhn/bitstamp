@@ -1,5 +1,4 @@
-// components/CryptoTable.js
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image'; 
 import image1 from './image/image1 (2).png';
 import image2 from './image/image2 (2).png';
@@ -14,7 +13,8 @@ import image10 from './image/image10.png';
 
 const coinImages = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10];
 
-const cryptoData = [
+// Sample data for different tabs
+const popularData = [
   { rank: '01', name: 'Bitcoin (BTC)', lastPrice: '$15,948.80', change: '-1.87%', marketCap: '$319,240,000,000', changePositive: false },
   { rank: '02', name: 'Cardano (ADA)', lastPrice: '$15,948.80', change: '-1.87%', marketCap: '$319,240,000,000', changePositive: false },
   { rank: '03', name: 'Dogecoin (DOGE)', lastPrice: '$15,948.80', change: '+1.87%', marketCap: '$319,240,000,000', changePositive: true },
@@ -23,51 +23,137 @@ const cryptoData = [
   { rank: '06', name: 'Ethereum (ETH)', lastPrice: '$1,103.50', change: '+1.87%', marketCap: '$139,560,000,000', changePositive: true },
   { rank: '07', name: 'Tether (USDT)', lastPrice: '$0.9989', change: '-1.87%', marketCap: '$65,813,633,222', changePositive: false },
   { rank: '08', name: 'Polkadot (DOT)', lastPrice: '$15,948.80', change: '+1.87%', marketCap: '$319,240,000,000', changePositive: true },
-  { rank: '09', name: 'USDC Coin (USDC)', lastPrice: '$15,948.80', change: '-1.87%', marketCap: '$319,240,000,000', changePositive: false },
+  { rank: '09', name: 'USDC Coin (USDC)', lastPrice: '$15,948.80', change: '-1.87%', marketCap: '$319`319,240,000,000', changePositive: false },
   { rank: '10', name: 'Uniswap (UNI)', lastPrice: '$15,948.80', change: '+1.87%', marketCap: '$319,240,000,000', changePositive: true },
 ];
 
+const recentlyAddedData = [
+  { rank: '01', name: 'NewCoin1 (NC1)', lastPrice: '$0.50', change: '+5.20%', marketCap: '$50,000,000', changePositive: true },
+  { rank: '02', name: 'NewCoin2 (NC2)', lastPrice: '$1.20', change: '-2.10%', marketCap: '$120,000,000', changePositive: false },
+  { rank: '03', name: 'NewCoin3 (NC3)', lastPrice: '$0.75', change: '+3.45%', marketCap: '$75,000,000', changePositive: true },
+];
+
+const globalChartsData = [
+  { rank: '01', name: 'GlobalCoin1 (GC1)', lastPrice: '$10,000.00', change: '+0.87%', marketCap: '$200,000,000,000', changePositive: true },
+  { rank: '02', name: 'GlobalCoin2 (GC2)', lastPrice: '$2,500.00', change: '-1.23%', marketCap: '$80,000,000,000', changePositive: false },
+  { rank: '03', name: 'GlobalCoin3 (GC3)', lastPrice: '$1.50', change: '+2.15%', marketCap: '$30,000,000,000', changePositive: true },
+  { rank: '04', name: 'Binance USD (BUSD)', lastPrice: '$15,948.80', change: '-1.87%', marketCap: '$319,240,000,000', changePositive: false },
+];
+
 const CryptoTable = () => {
+  const [activeTab, setActiveTab] = useState('POPULAR');
+
+  // Determine which data to display based on active tab
+  const getTableData = () => {
+    switch (activeTab) {
+      case 'RECENTLY ADDED':
+        return recentlyAddedData;
+      case 'GLOBAL CHARTS':
+        return globalChartsData;
+      case 'POPULAR':
+      default:
+        return popularData;
+    }
+  };
+
+  const tableData = getTableData();
+
   return (
     <div className="bg-[#1A2C38] bodeinggaas text-amber-50">
       {/* Tabs */}
-      <div className="buttonsflesxisnwa grid grid-cols-2 sm:flex items-center justify-items-start  mb-4 w-full gap-[16px] sm:gap-[20px] md:gap-[24px] lg:gap-[32px] xl:gap-[36px] 2xl:gap-[40px] p-[13px] sm:p-[14px] md:p-[15px] lg:p-[16px] xl:p-[20px] 2xl:p-[24px] border-b-[1px] border-[#03fc9e1f] flex-wrap sm:flex-nowrap">
-        <button className="peoexgols cursor-pointer !text-[#EAF4FE] transition-All duration-200">POPULAR</button>
-        <button className="peoexgols cursor-pointer hover:text-[#EAF4FE] transition-All duration-200">RECENTLY ADDED</button>
-        <button className="peoexgols cursor-pointer hover:text-[#EAF4FE] transition-All duration-200">GLOBAL CHARTS</button>
-        <button className="ml-auto peoexgolsss flex items-center justify-items-start sm:justify-items-center gap-[2px] lg:gap-3 cursor-pointer">VIEW MORE 
-        <svg className='w-[12px] sm:w-[13px] md:w-[14px] lg:w-[15px] xl:w-[16px] 2xl:w-[20px]' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.75 12C1.75 11.5858 2.08579 11.25 2.5 11.25L20.5007 11.25C20.9149 11.25 21.2507 11.5858 21.2507 12C21.2507 12.4142 20.9149 12.75 20.5007 12.75L2.5 12.75C2.08579 12.75 1.75 12.4142 1.75 12Z" fill="#03FC9E"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0204 5.42388C16.3386 5.1587 16.8115 5.20168 17.0767 5.51988L21.8101 11.1998C22.1964 11.6634 22.1964 12.3367 21.8101 12.8003L17.0767 18.4802C16.8115 18.7984 16.3386 18.8414 16.0204 18.5762C15.7022 18.311 15.6592 17.8381 15.9244 17.5199L20.5244 12L15.9244 6.48018C15.6592 6.16198 15.7022 5.68906 16.0204 5.42388Z" fill="#03FC9E"/>
-        </svg>
-        </button>
-      </div>
-      <div className="overflow-x-auto ">
+      <div className="buttonsflesxisnwa flex items-center mb-4 w-full gap-[16px] sm:gap-[20px] md:gap-[24px] lg:gap-[32px] xl:gap-[36px] 2xl:gap-[40px] p-[13px] sm:p-[14px] md:p-[15px] lg:p-[16px] xl:p-[20px] 2xl:p-[24px] border-b-[1px] border-[#03fc9e1f]">
+  <button
+    className={`peoexgols cursor-pointer transition-all duration-200 ${
+      activeTab === 'POPULAR' ? '!text-[#EAF4FE]' : 'hover:text-[#EAF4FE]'
+    }`}
+    onClick={() => setActiveTab('POPULAR')}
+  >
+    POPULAR
+  </button>
+  <button
+    className={`peoexgols cursor-pointer transition-all duration-200 ${
+      activeTab === 'RECENTLY ADDED' ? '!text-[#EAF4FE]' : 'hover:text-[#EAF4FE]'
+    }`}
+    onClick={() => setActiveTab('RECENTLY ADDED')}
+  >
+    RECENTLY ADDED
+  </button>
+  <button
+    className={`peoexgols cursor-pointer transition-all duration-200 ${
+      activeTab === 'GLOBAL CHARTS' ? '!text-[#EAF4FE]' : 'hover:text-[#EAF4FE]'
+    }`}
+    onClick={() => setActiveTab('GLOBAL CHARTS')}
+  >
+    GLOBAL CHARTS
+  </button>
+  <button className="ml-auto peoexgolsss sm:flex items-center justify-items-start sm:justify-items-center gap-[2px] lg:gap-3 cursor-pointer hidden">
+    VIEW MORE
+    <svg
+      className="w-[12px] sm:w-[13px] md:w-[14px] lg:w-[15px] xl:w-[16px] 2xl:w-[20px]"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M1.75 12C1.75 11.5858 2.08579 11.25 2.5 11.25L20.5007 11.25C20.9149 11.25 21.2507 11.5858 21.2507 12C21.2507 12.4142 20.9149 12.75 20.5007 12.75L2.5 12.75C2.08579 12.75 1.75 12.4142 1.75 12Z"
+        fill="#03FC9E"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M16.0204 5.42388C16.3386 5.1587 16.8115 5.20168 17.0767 5.51988L21.8101 11.1998C22.1964 11.6634 22.1964 12.3367 21.8101 12.8003L17.0767 18.4802C16.8115 18.7984 16.3386 18.8414 16.0204 18.5762C15.7022 18.311 15.6592 17.8381 15.9244 17.5199L20.5244 12L15.9244 6.48018C15.6592 6.16198 15.7022 5.68906 16.0204 5.42388Z"
+        fill="#03FC9E"
+      />
+    </svg>
+  </button>
+</div>
+      <div className="overflow-x-auto">
         <table className="w-full text-left">
           <thead>
-          <tr className="">
-              <th className="p-3 sm:p-4 hidden sm:table-cell" scope="col">ALL</th>
-              <th className="p-3 sm:p-4 hidden sm:table-cell" scope="col">#</th>
-              <th className="p-3 sm:p-4" scope="col">Name</th>
-              <th className="p-3 sm:p-4" scope="col">Last Price</th>
-              <th className="p-3 sm:p-4 hidden sm:table-cell" scope="col">24h %</th>
-              <th className="p-3 sm:p-4 hidden lg:table-cell" scope="col">Market Cap</th>
-              <th className="p-3 sm:p-4 hidden xl:table-cell" scope="col">Last 7 Days</th>
-              <th className="p-3 sm:p-4 hidden md:table-cell" scope="col">Actions</th>
+            <tr>
+              <th className="p-3 sm:p-4 hidden sm:table-cell" scope="col">
+                ALL
+              </th>
+              <th className="p-3 sm:p-4 hidden sm:table-cell" scope="col">
+                #
+              </th>
+              <th className="p-3 sm:p-4" scope="col">
+                Name
+              </th>
+              <th className="p-3 sm:p-4" scope="col">
+                Last Price
+              </th>
+              <th className="p-3 sm:p-4 hidden sm:table-cell" scope="col">
+                24h %
+              </th>
+              <th className="p-3 sm:p-4 hidden lg:table-cell" scope="col">
+                Market Cap
+              </th>
+              <th className="p-3 sm:p-4 hidden xl:table-cell" scope="col">
+                Last 7 Days
+              </th>
+              <th className="p-3 sm:p-4 hidden md:table-cell" scope="col">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
-            {cryptoData.map((coin, index) => (
-              <tr key={index} className="border-t-[1px] border-[#03fc9d0e] group">
+            {tableData.map((coin, index) => (
+              <tr
+                key={index}
+                className="border-t-[1px] border-[#03fc9d0e] group"
+              >
                 <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] hidden sm:table-cell">
-                  <span className="">
+                  <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`w-[12px] sm:w-[13px] md:w-[14px] lg:w-[15px] xl:w-[16px] 2xl:w-[20px]  transition-colors duration-200 ${
-                      index === 2
-                        ? 'fill-yellow-400 fill-opacity-100'
-                        : 'fill-white fill-opacity-70 group-hover:fill-yellow-400 group-hover:fill-opacity-100'
-                    }`}
+                      className={`w-[12px] sm:w-[13px] md:w-[14px] lg:w-[15px] xl:w-[16px] 2xl:w-[20px] transition-colors duration-200 ${
+                        index === 2
+                          ? 'fill-yellow-400 fill-opacity-100'
+                          : 'fill-white fill-opacity-70 group-hover:fill-yellow-400 group-hover:fill-opacity-100'
+                      }`}
                       viewBox="0 0 19 18"
                       fill="none"
                     >
@@ -79,16 +165,20 @@ const CryptoTable = () => {
                     </svg>
                   </span>
                 </td>
-                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] hidden sm:table-cell">{coin.rank}</td>
+                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] hidden sm:table-cell">
+                  {coin.rank}
+                </td>
                 <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] flex items-center gap-[5px] lg:gap-[8px]">
-                <Image
-                    src={coinImages[index]}
+                  <Image
+                    src={coinImages[index % coinImages.length]} // Fallback for when index exceeds image array length
                     alt={`${coin.name} icon`}
                     className="w-[16px] sm:w-[20px] md:w-[24px] lg:w-[32px] xl:w-[36px] 2xl:w-[40px] hidden sm:table-cell"
                   />
-                    {coin.name}
-                    </td>
-                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px]">{coin.lastPrice}</td>
+                  {coin.name}
+                </td>
+                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px]">
+                  {coin.lastPrice}
+                </td>
                 <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] hidden sm:table-cell">
                   <span
                     className={
@@ -98,7 +188,9 @@ const CryptoTable = () => {
                     {coin.change}
                   </span>
                 </td>
-                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] lg:table-cell hidden">{coin.marketCap}</td>
+                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] lg:table-cell hidden">
+                  {coin.marketCap}
+                </td>
                 <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] xl:table-cell hidden">
                   {coin.changePositive ? (
                     <svg
@@ -166,7 +258,7 @@ const CryptoTable = () => {
                     </svg>
                   )}
                 </td>
-                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] hidden md:table-cell" >
+                <td className="p-[12px] sm:p-[13px] md:p-[14px] lg:p-[15px] xl:p-[16px] 2xl:p-[20px] hidden md:table-cell">
                   <button
                     className={`px-[12px] sm:px-[13px] md:px-[14px] lg:px-[15px] xl:px-[16px] 2xl:px-[20px] py-[10px] sm:py-[11px] md:py-[12px] lg:py-[13px] xl:py-[14px] 2xl:py-[15px] cursor-pointer ${
                       index === 2

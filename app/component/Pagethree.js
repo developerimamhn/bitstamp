@@ -90,8 +90,8 @@ const Pagethree = () => {
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: wrapperRef.current,
-              start: isMobile ? 'top 90%' : 'top 80%',
-              end: isMobile ? 'bottom 20%' : 'bottom 10%', // Adjusted for smoother completion
+              start: isMobile ? 'top 100%' : 'top 100%',
+              end: isMobile ? 'bottom 100%' : 'bottom 100%', // Adjusted for smoother completion
               scrub: 0.8,
             },
           });
@@ -103,7 +103,7 @@ const Pagethree = () => {
             {
               x: 0,
               opacity: 1,
-              duration: 1.5,
+              duration: 2,
               ease: 'power3.out',
             },
             0 // Start at timeline's beginning
@@ -117,7 +117,7 @@ const Pagethree = () => {
               x: 0,
               opacity: 1,
               scale: 1,
-              duration: 1,
+              duration: 2,
               ease: 'power3.out',
             },
             0.1 // Slight stagger
@@ -131,7 +131,7 @@ const Pagethree = () => {
               x: 0,
               opacity: 1,
               scale: 1,
-              duration: 0.6, // Faster animation
+              duration: 1, // Faster animation
               ease: 'power3.out',
             },
             0.25 // Stagger for visual hierarchy
