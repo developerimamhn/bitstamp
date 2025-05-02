@@ -37,7 +37,7 @@ const Pageone = () => {
             scrollTrigger: {
               trigger: wrapperRef.current,
               start: isMobile ? 'top 100%' : 'top 100%',
-              end: isMobile ? 'bottom 20%' : 'bottom 10%', // Adjusted for smoother completion
+              end: isMobile ? 'bottom 100%' : 'bottom 10%', // Adjusted for smoother completion
               scrub: 0.8,
             },
           });

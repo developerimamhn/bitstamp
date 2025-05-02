@@ -29,6 +29,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 
@@ -93,6 +94,106 @@ body {
 
 
 @layer utilities{
+  .buttonone{
+    border-radius: 6px;
+    background: rgba(218, 255, 228, 0.10);
+    color: var(--White, #FFF);
+    text-align: right;
+    font-family: 'Switzer', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .buttontwo{
+    border-radius: 6px;
+    background: var(--03-fc-9-e, #03FC9E);
+    color: var(--Black, #030312);
+    text-align: right;
+    font-family: "Switzer", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .allhastinwsaws{
+    color: rgba(255, 255, 255, 0.50);
+    font-family: 'Switzer', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .allhastinwsaws{
+    @apply text-[10px] sm:text-[11px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px]
+  }
+  .bodeinggaas{
+    border-radius: 10px;
+    border: 1px solid rgba(3, 252, 158, 0.12);
+    background: rgba(3, 252, 158, 0.01);
+    backdrop-filter: blur(22px);
+  }
+  .peoexgolsss{
+    color: #03FC9E;
+    text-align: right;
+    font-family: "Switzer", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  .peoexgols{
+    color: rgba(255, 255, 255, 0.50);
+    font-family: "Switzer", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  .peoexgols,.peoexgolsss ,.buttonone{
+    @apply text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] 
+  }
+  .buttonsflesxisnwa{
+    fill: rgba(3, 252, 158, 0.01);
+    stroke-width: 1px;
+    stroke: rgba(3, 252, 158, 0.12);
+    backdrop-filter: blur(22px);
+    width: 100%;
+  }
+  @import url('https://fonts.cdnfonts.com/css/switzer');
+
+  /* Class for changePositive: true (green) */
+  .change-positive {
+    color: #03FC9E;
+    font-family: 'Switzer', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: inline-flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    border: 1px solid rgba(3, 252, 158, 0.10);
+    background: rgba(3, 252, 158, 0.10);
+  }
+  
+  /* Class for changePositive: false (red) */
+  .change-negative {
+    color: #FB4950;
+    font-family: 'Switzer', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: inline-flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    border: 1px solid rgba(251, 73, 80, 0.10);
+    background: rgba(251, 73, 80, 0.10);
+  }
   .learndihnsaz{
     color: var(--03-fc-9-e, #03FC9E);
     text-align: center;

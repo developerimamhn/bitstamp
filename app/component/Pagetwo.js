@@ -8,6 +8,7 @@ import image2 from './image/image2.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import Crxconving from './Crxconving';
+import CryptoTable from './CryptoTable';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -151,7 +152,8 @@ const Pagetwo = () => {
     return (
         <div id='About' ref={wrapperRef} className='py-[45px] sm:py-[60px] md:py-[90px] lg:py-[120px] xl:py-[150px] 2xl:py-[180px] px-6 sm:px-0'>
            <div className='container mx-auto'>
-              <Image ref={wrapperRef} src={image2} alt='image2'/>
+              {/* <Image ref={wrapperRef} src={image2} alt='image2'/> */}
+              <CryptoTable/>
            </div>
         </div>
     );
