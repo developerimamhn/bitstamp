@@ -94,7 +94,7 @@ const Pageone = () => {
 
     
     return (
-        <div    className='relative'>
+        <div  id='About'  className='relative'>
             <div   className=''>
               <div ref={wrapperRef} className='container mx-auto'>
                 <div className=' flex flex-col sm:grid grid-cols-12 items-center bacxkgaAS mx-auto py-[32px] sm:py-[36px] md:py-[40px] lg:py-[48px] xl:py-[64px] 2xl:py-[90px] px-[36px] sm:px-[40px] md:px-[48px] lg:px-[64px] xl:px-[96px] 2xl:px-[130px] relative sm:gap-0 gap-12'>

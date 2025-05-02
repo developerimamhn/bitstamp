@@ -149,7 +149,7 @@ const Footer = () => {
   ];
   
     return (
-        <div id='Wiki' className=''>
+        <div id='Support' className=''>
             <div className='w-full '>
                 <div className='flex items-start justify-between sm:flex-row flex-col gap-[40px] pb-[24px] sm:pb-[32px] md:pb-[36px] lg:pb-[40px] xl:pb-[48px] 2xl:pb-[60px] container mx-auto px-[24px] sm:px-0'>
                     <div className='grid grid-cols-12 gap-[36px] sm:gap-[40px] md:gap-[48px] lg:gap-[64px] xl:gap-[96px] 2xl:gap-[128px] h-full '>

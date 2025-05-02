@@ -172,7 +172,7 @@ const CryptoTable = () => {
                   <Image
                     src={coinImages[index % coinImages.length]} // Fallback for when index exceeds image array length
                     alt={`${coin.name} icon`}
-                    className="w-[16px] sm:w-[20px] md:w-[24px] lg:w-[32px] xl:w-[36px] 2xl:w-[40px] hidden sm:table-cell"
+                    className="w-[16px] sm:w-[20px] md:w-[24px] lg:w-[32px] xl:w-[36px] 2xl:w-[40px]"
                   />
                   {coin.name}
                 </td>

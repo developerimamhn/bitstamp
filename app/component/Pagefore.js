@@ -147,7 +147,7 @@ const Pageone = () => {
 
   return (
     <div
-      id="Roadmap"
+      id="Blog"
       ref={wrapperRef}
       className="relative overflow-hidden py-[50px] sm:py-[60px] md:py-[70px] lg:py-[90px] xl:py-[120px] 2xl:py-[150px]"
     >

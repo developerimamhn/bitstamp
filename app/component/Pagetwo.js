@@ -154,7 +154,7 @@ const Pagetwo = () => {
            <div className='container mx-auto'>
               {/* <Image ref={wrapperRef} src={image2} alt='image2'/> */}
               <CryptoTable/>
-              <button className="peoexgolsss flex items-center gap-[2px] lg:gap-3 cursor-pointer sm:hidden mt-6">
+              <button className="peoexgolsss flex items-center mx-auto gap-[2px] lg:gap-3 cursor-pointer sm:hidden mt-6">
     VIEW MORE
     <svg
       className="w-[12px] sm:w-[13px] md:w-[14px] lg:w-[15px] xl:w-[16px] 2xl:w-[20px]"
