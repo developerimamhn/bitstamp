@@ -9,63 +9,61 @@ import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 
 const Pageseven = () => {
+  useEffect(() => {
+    // GSAP context for scoping and cleanup
+    const ctx = gsap.context(() => {
+      // Create a timeline for staggered animations
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.logo-container',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none none',
+          // markers: true, // Uncomment for debugging
+        },
+      });
 
-    useEffect(() => {
-        // GSAP ScrollTrigger Animations
-        gsap.fromTo(
-          '#logo1',
+      // MatchMedia for responsive animations
+      const mm = gsap.matchMedia();
+      mm.add('(min-width: 768px)', () => {
+        // Staggered animations for logos
+        tl.fromTo(
+          ['#logo1', '#logo2', '#logo3'],
           { opacity: 0, y: 50 },
           {
             opacity: 1,
             y: 0,
-            duration: 2,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: '#logo1',
-              start: 'top 80%',
-              end: 'bottom 20%',
-              toggleActions: 'play none none none',
-            },
+            duration: 1.2,
+            ease: 'expo.out',
+            stagger: 0.3, // 0.3s delay between each logo
           }
         );
-        gsap.fromTo(
-          '#logo2',
-          { opacity: 0, y: 100 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 2,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: '#logo2',
-              start: 'top 80%',
-              end: 'bottom 20%',
-              toggleActions: 'play none none none',
-            },
-          }
-        );
-        gsap.fromTo(
-          '#logo3',
-          { opacity: 0, y: 150 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 2,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: '#logo3',
-              start: 'top 80%',
-              end: 'bottom 20%',
-              toggleActions: 'play none none none',
-            },
-          }
-        );
-      }, []);
+      });
 
+      // Fallback for smaller screens (simplified animation)
+      mm.add('(max-width: 767px)', () => {
+        tl.fromTo(
+          ['#logo1', '#logo2', '#logo3'],
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            stagger: 0.2,
+          }
+        );
+      });
+    });
+
+    // Cleanup GSAP context
+    return () => ctx.revert();
+  }, []);
 
     return (
-        <div className='py-[50px] sm:py-[60px] md:py-[70px] lg:py-[90px] xl:py-[120px] 2xl:py-[150px] overflow-hidden'>
-            <div className='container mx-auto px-6 sm:px-0'>
+        <div className='py-[50px] sm:py-[60px] md:py-[70px] lg:py-[90px] xl:py-[120px] 2xl:py-[150px] overflow-hidden relative'>
+          
+                <div className='container mx-auto px-6 sm:px-0'>
                 <h2 className="tradines text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[45px] !font-semibold text-center">
                     <span className="bg-[#03FC9E] rounded-md px-2 py-1 text-[#15161B] ">
                     Reliable   
@@ -101,6 +99,21 @@ const Pageseven = () => {
                         </div>
                     </div>
                 </section>
+                </div>
+                <div className='relative'>
+                <svg className='w-2/4 absolute right-[-5%] xl:right-[-8%] 2xl:right-[0%] bottom-[40%] xl:bottom-[22%] 2xl:bottom-[15%] -z-10 lg:block hidden' viewBox="0 0 1188 1171" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.76" filter="url(#filter0_f_214_329)">
+                      <circle cx="594" cy="577" r="194" fill="#03FC9E"/>
+                      </g>
+                      <defs>
+                      <filter id="filter0_f_214_329" x="0" y="-17" width="1188" height="1188" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                      <feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur_214_329"/>
+                      </filter>
+                      </defs>
+                      </svg>
+                <div className='container mx-auto px-6 sm:px-0'>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-[35px] mt-[40px] sm:mt-[60px] md:mt-[90px] lg:mt-[120px] xl:mt-[150px] 2xl:mt-[180px]'>
                     <div className='col-span-7 mt-[17px]'>
                       <div className='grid grid-rows-1 gap-[20px] sm:gap-[24px] md:gap-[32px] lg:gap-[36px] xl:gap-[40px] 2xl:gap-[50px]'>
@@ -139,18 +152,7 @@ const Pageseven = () => {
                       </div>
                     </div>
                     <div className='col-span-3 h-fit relative'>
-                    <svg className='w-[200%] absolute -top-50 -left-50 z-[-2]] 2xl:block hidden' viewBox="0 0 1032 1306" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g filter="url(#filter0_f_214_327)">
-                      <circle cx="653" cy="653" r="153" fill="#03FC9E"/>
-                      </g>
-                      <defs>
-                      <filter id="filter0_f_214_327" x="0" y="0" width="1306" height="1306" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                      <feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur_214_327"/>
-                      </filter>
-                      </defs>
-                      </svg>
+                    
                         <Image className='w-full' src={investing} alt="image is loading..."/>
                     </div>
                 </div>
@@ -177,6 +179,7 @@ const Pageseven = () => {
                           </ul>
                       </div>
                   </div>
+                </div>
                 </div>
             </div>
         </div>

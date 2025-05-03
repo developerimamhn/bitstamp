@@ -51,92 +51,93 @@ const Pageone = () => {
       mm.add(
         {
           isDesktop: '(min-width: 768px)',
-          isMobile: '(max-width: 767px)',
         },
         (context) => {
-          const { isDesktop, isMobile } = context.conditions;
+          const { isDesktop } = context.conditions;
 
-          // Main wrapper animation
-          gsap.fromTo(
-            wrapperRef.current,
-            { y: isMobile ? 50 : 100, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: isMobile ? 1 : 1.5,
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: wrapperRef.current,
-                start: isMobile ? 'top 100%' : 'top 100%',
-                end: 'bottom 100%',
-                scrub: 0.8,
-              },
+          if (isDesktop) {
+            // Main wrapper animation
+            gsap.fromTo(
+              wrapperRef.current,
+              { y: 100, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 1.5,
+                ease: 'power3.out',
+                scrollTrigger: {
+                  trigger: wrapperRef.current,
+                  start: 'top 100%',
+                  end: 'bottom 100%',
+                  scrub: 0.8,
+                },
+              }
+            );
+
+            // Title animation (if used)
+            if (titleRef.current) {
+              gsap.fromTo(
+                titleRef.current,
+                { y: 30, opacity: 0, scale: 0.95 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  scale: 1,
+                  duration: 1,
+                  ease: 'power2.out',
+                  scrollTrigger: {
+                    trigger: titleRef.current,
+                    start: 'top 85%',
+                    end: 'top 50%',
+                    scrub: 0.8,
+                  },
+                }
+              );
             }
-          );
 
-          // Title animation (if used, currently no title in JSX)
-          if (titleRef.current) {
-            gsap.fromTo(
-              titleRef.current,
-              { y: 30, opacity: 0, scale: 0.95 },
-              {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1,
-                ease: 'power2.out',
-                scrollTrigger: {
-                  trigger: titleRef.current,
-                  start: 'top 85%',
-                  end: 'top 50%',
-                  scrub: 0.8,
-                },
-              }
-            );
-          }
+            // Card animations with stagger
+            cardRefs.current.forEach((card, index) => {
+              if (!card) return;
+              gsap.fromTo(
+                card,
+                { y: 50, opacity: 0, scale: 0.9 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  scale: 1,
+                  duration: 1,
+                  delay: index * 0.25, // Stagger effect
+                  ease: 'power3.out',
+                  scrollTrigger: {
+                    trigger: card,
+                    start: 'top 80%',
+                    end: 'top 30%',
+                    scrub: 0.8,
+                  },
+                }
+              );
+            });
 
-          // Card animations with stagger
-          cardRefs.current.forEach((card, index) => {
-            if (!card) return;
-            gsap.fromTo(
-              card,
-              { y: 50, opacity: 0, scale: 0.9 },
-              {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1,
-                delay: index * 0.25, // Stagger effect
-                ease: 'power3.out',
-                scrollTrigger: {
-                  trigger: card,
-                  start: 'top 80%',
-                  end: 'top 30%',
-                  scrub: 0.8,
-                },
-              }
-            );
-          });
-
-          // Acquire CRX section animation (if used, currently no section in JSX)
-          if (acquireRef.current) {
-            gsap.fromTo(
-              acquireRef.current,
-              { y: 50, opacity: 0, scale: 0.95 },
-              {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1.2,
-                ease: 'power3.out',
-                scrollTrigger: {
-                  trigger: acquireRef.current,
-                  start: 'top 85%',
-                  end: 'top 40%',
-                  scrub: 0.8,
-                },
-              }
-            );
+            // Acquire CRX section animation (if used)
+            if (acquireRef.current) {
+              gsap.fromTo(
+                acquireRef.current,
+                { y: 50, opacity: 0, scale: 0.95 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  scale: 1,
+                  duration: 1.2,
+                  ease: 'power3.out',
+                  scrollTrigger: {
+                    trigger: acquireRef.current,
+                    start: 'top 85%',
+                    end: 'top 40%',
+                    scrub: 0.8,
+                  },
+                }
+              );
+            }
           }
         }
       );

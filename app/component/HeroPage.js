@@ -18,31 +18,36 @@ const HeroPage = () => {
   const imageRef = useRef(null);
 
   useEffect(() => {
-    // Animation for text elements
-    gsap.from(textRef.current, {
-      opacity: 0,
-      x: -100,
-      duration: 1.5,
-      ease: 'power2.out',
-    });
+    // Check if the screen width is greater than 768px (non-mobile)
+    const isDesktop = window.innerWidth > 768;
 
-    // Animation for buttons
-    gsap.from(buttonRef.current, {
-      opacity: 0,
-      y: 50,
-      duration: 1.5,
-      delay: 0.5, // Delay to make the buttons appear after text animation
-      ease: 'power2.out',
-    });
+    if (isDesktop) {
+      // Animation for text elements
+      gsap.from(textRef.current, {
+        opacity: 0,
+        x: -100,
+        duration: 1.5,
+        ease: 'power2.out',
+      });
 
-    // Animation for image
-    gsap.from(imageRef.current, {
-      opacity: 0,
-      x: 100,
-      duration: 1.5,
-      delay: 0.5,
-      ease: 'power2.out',
-    });
+      // Animation for buttons
+      gsap.from(buttonRef.current, {
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        delay: 0.5,
+        ease: 'power2.out',
+      });
+
+      // Animation for image
+      gsap.from(imageRef.current, {
+        opacity: 0,
+        x: 100,
+        duration: 1.5,
+        delay: 0.5,
+        ease: 'power2.out',
+      });
+    }
   }, []);
 
 
@@ -130,51 +135,43 @@ const HeroPage = () => {
     },
   ];
   const itemRefs = useRef([]);
+
   // GSAP animation effect
   useEffect(() => {
-    itemRefs.current.forEach((el, index) => {
-      if (!el) return;
+    const isDesktop = window.innerWidth > 768;
 
-      gsap.fromTo(
-        el,
-        {
-          autoAlpha: 0,
-          y: 50,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 100%',
-            toggleActions: 'play none none none',
+    if (isDesktop) {
+      itemRefs.current.forEach((el, index) => {
+        if (!el) return;
+
+        gsap.fromTo(
+          el,
+          {
+            autoAlpha: 0,
+            y: 50,
           },
-          delay: index * 0.1, // Delay between each item
-        }
-      );
-    });
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 100%',
+              toggleActions: 'play none none none',
+            },
+            delay: index * 0.1, // Delay between each item
+          }
+        );
+      });
+    }
   }, []);
-
 
 
     return (
         <div id="hero" ref={buttonRef} className='relative'>
           <div className='relative z-[2] overflow-hidden'>
-            <div className='pt-[80px] sm:pt-[81px] md:pt-[32px] lg:pt-[36px] xl:pt-[30px] 2xl:pt-[30px] sm:pb-0 pb-[50px] container mx-auto px-[24px] sm:px-0 w-full flex felx-center justify-center'>
-                <div  className='grid grid-cols-1 sm:grid-cols-2 items-center'>
-                  <div className='flex items-center flex-col sm:items-start justify-center sm:justify-start'>
-                    <div className='welcobits  sm:text-start text-center'>Welcome to bitstamp</div>
-                    <h2 className='tradines pt-2 sm:pt-0 text-[24px] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[64px] 2xl:text-[75px]  sm:text-start text-center'><span className=' bg-[#03FC9E] rounded-[5px] !text-[#15161B]'>Buy & tradeon</span> the original trusted crypto exchange. </h2>
-                    <p className='bitstartp text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] pt-[14px] sm:pt-[15px] md:pt-[16px] lg:pt-[20px] xl:pt-[24px] 2xl:pt-[30px]  sm:text-start text-center'>Bitstamp makes trading easy, fast & reliable. With live customer support, staking andbank-grade security & insurance.Trusted Crypto Exchange Since 2011.</p>
-                    <button className='buttonaudit cursor-pointer text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] flex items-center h-[36px] md:h-[40px] lg:h-[44px] xl:h-[48px] 2xl:h-[59px] px-[16px] sm:px-[20px] md:px-[24px] lg:px-[32px] xl:px-[36px] 2xl:px-[40px] group gap-[7.50px] mt-[20px] sm:mt-[24px] md:mt-[32px] lg:mt-[36px] xl:mt-[40px] 2xl:mt-[47px]'>
-                    Get started
-                    </button>
-                  </div>
-                  <div className='relative'>
-                    <Image className='w-9/10' src={image1} alt='loading...'/>
-                    <svg className='w-full absolute right-0 top-0 -z-10' viewBox="0 0 1188 1171" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='w-2/5 absolute right-[15%] top-1/2 -translate-y-1/2 -z-10 sm:block hidden' viewBox="0 0 1188 1171" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g opacity="0.76" filter="url(#filter0_f_214_329)">
                       <circle cx="594" cy="577" r="194" fill="#03FC9E"/>
                       </g>
@@ -186,6 +183,30 @@ const HeroPage = () => {
                       </filter>
                       </defs>
                       </svg>
+            <div className='pt-[80px] sm:pt-[81px] md:pt-[32px] lg:pt-[36px] xl:pt-[30px] 2xl:pt-[100px] sm:pb-0 pb-[50px] container mx-auto px-[24px] sm:px-0 w-full flex felx-center justify-center'>
+                <div  className='grid grid-cols-1 sm:grid-cols-2 items-center'>
+                  <div className='flex items-center flex-col sm:items-start justify-center sm:justify-start'>
+                    <div className='welcobits  sm:text-start text-center'>Welcome to bitstamp</div>
+                    <h2 className='tradines pt-2 sm:pt-0 text-[24px] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[64px] 2xl:text-[75px]  sm:text-start text-center'><span className=' bg-[#03FC9E] rounded-[5px] !text-[#15161B]'>Buy & tradeon</span> the original trusted crypto exchange. </h2>
+                    <p className='bitstartp text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] pt-[14px] sm:pt-[15px] md:pt-[16px] lg:pt-[20px] xl:pt-[24px] 2xl:pt-[30px]  sm:text-start text-center'>Bitstamp makes trading easy, fast & reliable. With live customer support, staking andbank-grade security & insurance.Trusted Crypto Exchange Since 2011.</p>
+                    <button className='buttonaudit cursor-pointer text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] flex items-center h-[36px] md:h-[40px] lg:h-[44px] xl:h-[48px] 2xl:h-[59px] px-[16px] sm:px-[20px] md:px-[24px] lg:px-[32px] xl:px-[36px] 2xl:px-[40px] group gap-[7.50px] mt-[20px] sm:mt-[24px] md:mt-[32px] lg:mt-[36px] xl:mt-[40px] 2xl:mt-[47px]'>
+                    Get started
+                    </button>
+                  </div>
+                  <div className='relative'>
+                    <Image className='w-9/10' src={image1} alt='loading...'/>
+                    {/* <svg className='w-full absolute right-0 top-0 -z-10' viewBox="0 0 1188 1171" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.76" filter="url(#filter0_f_214_329)">
+                      <circle cx="594" cy="577" r="194" fill="#03FC9E"/>
+                      </g>
+                      <defs>
+                      <filter id="filter0_f_214_329" x="0" y="-17" width="1188" height="1188" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                      <feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur_214_329"/>
+                      </filter>
+                      </defs>
+                      </svg> */}
                   </div>
                   
                 </div>

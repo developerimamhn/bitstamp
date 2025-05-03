@@ -27,61 +27,62 @@ const Pageone = () => {
       mm.add(
         {
           isDesktop: '(min-width: 768px)',
-          isMobile: '(max-width: 767px)',
         },
         (context) => {
-          const { isDesktop, isMobile } = context.conditions;
+          const { isDesktop } = context.conditions;
 
-          // Create a timeline for better control and sequencing
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: wrapperRef.current,
-              start: isMobile ? 'top 100%' : 'top 100%',
-              end: isMobile ? 'bottom 100%' : 'bottom 10%', // Adjusted for smoother completion
-              scrub: 0.8,
-            },
-          });
+          if (isDesktop) {
+            // Create a timeline for better control and sequencing
+            const tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: wrapperRef.current,
+                start: 'top 100%',
+                end: 'bottom 10%', // Adjusted for smoother completion
+                scrub: 0.8,
+              },
+            });
 
-          // Main wrapper animation (left to right)
-          tl.fromTo(
-            wrapperRef.current,
-            { x: isMobile ? -50 : -100, opacity: 0 },
-            {
-              x: 0,
-              opacity: 1,
-              duration: 1.5,
-              ease: 'power3.out',
-            },
-            0 // Start at timeline's beginning
-          );
+            // Main wrapper animation (left to right)
+            tl.fromTo(
+              wrapperRef.current,
+              { x: -100, opacity: 0 },
+              {
+                x: 0,
+                opacity: 1,
+                duration: 1.5,
+                ease: 'power3.out',
+              },
+              0 // Start at timeline's beginning
+            );
 
-          // First grid item (text content) animation (left to right)
-          tl.fromTo(
-            gridItem1Ref.current,
-            { x: -50, opacity: 0, scale: 0.95 },
-            {
-              x: 0,
-              opacity: 1,
-              scale: 1,
-              duration: 1,
-              ease: 'power3.out',
-            },
-            0.1 // Slight stagger
-          );
+            // First grid item (text content) animation (left to right)
+            tl.fromTo(
+              gridItem1Ref.current,
+              { x: -50, opacity: 0, scale: 0.95 },
+              {
+                x: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                ease: 'power3.out',
+              },
+              0.1 // Slight stagger
+            );
 
-          // Second grid item (image) animation (faster right to left)
-          tl.fromTo(
-            acquireRef.current,
-            { x: 50, opacity: 0, scale: 0.95 },
-            {
-              x: 0,
-              opacity: 1,
-              scale: 1,
-              duration: 0.6, // Faster animation
-              ease: 'power3.out',
-            },
-            0.25 // Stagger for visual hierarchy
-          );
+            // Second grid item (image) animation (faster right to left)
+            tl.fromTo(
+              acquireRef.current,
+              { x: 50, opacity: 0, scale: 0.95 },
+              {
+                x: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 0.6, // Faster animation
+                ease: 'power3.out',
+              },
+              0.25 // Stagger for visual hierarchy
+            );
+          }
         }
       );
     }, wrapperRef); // Scope animations to wrapperRef for React's strict mode
@@ -89,7 +90,6 @@ const Pageone = () => {
     // Cleanup GSAP context and animations
     return () => ctx.revert();
   }, []);
-
 
 
     
