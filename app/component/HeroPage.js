@@ -171,7 +171,7 @@ const HeroPage = () => {
     return (
         <div id="hero" ref={buttonRef} className='relative'>
           <div className='relative z-[2] overflow-hidden'>
-          <svg className='w-2/5 absolute right-[15%] top-1/2 -translate-y-1/2 -z-10 sm:block hidden' viewBox="0 0 1188 1171" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* <svg className='w-2/5 absolute right-[15%] top-1/2 -translate-y-1/2 -z-10 sm:block hidden' viewBox="0 0 1188 1171" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g opacity="0.76" filter="url(#filter0_f_214_329)">
                       <circle cx="594" cy="577" r="194" fill="#03FC9E"/>
                       </g>
@@ -182,7 +182,8 @@ const HeroPage = () => {
                       <feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur_214_329"/>
                       </filter>
                       </defs>
-                      </svg>
+                      </svg> */}
+                      <div className='w-1/6 h-1/6 absolute right-[20%] top-1/2 -translate-y-1/2 -z-10 sm:block hidden rounded-[388px] opacity-[0.76] bg-[#03FC9E] blur-[200px]'></div>
             <div className='pt-[80px] sm:pt-[81px] md:pt-[32px] lg:pt-[36px] xl:pt-[30px] 2xl:pt-[100px] sm:pb-0 pb-[50px] container mx-auto px-[24px] sm:px-0 w-full flex felx-center justify-center'>
                 <div  className='grid grid-cols-1 sm:grid-cols-2 items-center'>
                   <div className='flex items-center flex-col sm:items-start justify-center sm:justify-start'>

@@ -241,9 +241,7 @@ body {
     border-radius: 10px;
     border: 1px solid rgba(253, 252, 255, 0.10);
   }
-  .borindsas:hover{
-    border: none;
-  }
+
   .artoutsmartins{
     color: var(--fdfcff, #FDFCFF);
     font-family: "Graphik LCG";

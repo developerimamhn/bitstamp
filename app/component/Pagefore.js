@@ -150,7 +150,7 @@ const Pageone = () => {
     <div
       id="Blog"
       ref={wrapperRef}
-      className="relative overflow-hidden py-[50px] sm:py-[60px] md:py-[70px] lg:py-[90px] xl:py-[120px] 2xl:py-[150px]"
+      className="relative overflow-hidden py-[80px] sm:py-[60px] md:py-[70px] lg:py-[90px] xl:py-[120px] 2xl:py-[150px]"
     >
       <div className="relative">
         <div className="container mx-auto px-6 sm:px-0">
@@ -159,7 +159,7 @@ const Pageone = () => {
               <div
                 key={card.id}
                 ref={(el) => setCardRef(el, index)}
-                className="borindsas bg-transparent hover:bg-[#212227] duration-300 cursor-pointer p-[32px] sm:p-[36px] md:p-[40px] lg:p-[48px] xl:p-[64px] 2xl:p-[84px] col-span-12 sm:col-span-4 flex items-center justify-center flex-col"
+                className="borindsas bg-transparent sm:hover:border-none sm:hover:bg-[#212227] duration-300 cursor-pointer p-[32px] sm:p-[36px] md:p-[40px] lg:p-[48px] xl:p-[64px] 2xl:p-[84px] col-span-12 sm:col-span-4 flex items-center justify-center flex-col"
               >
                 <Image
                   src={card.imageSrc}

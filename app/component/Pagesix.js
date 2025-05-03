@@ -181,7 +181,7 @@ const Pagesix = () => {
   }, []);
 
     return (
-        <div className='' id='Roadmap'>
+        <div className='sm:pt-0 pt-16 ' id='Roadmap'>
             <div className='grid grid-cols-12 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 px-6 sm:px-0 items-center justify-center container mx-auto xl:max-w-none xl:px-0'>
                     <div className="col-span-12 sm:col-span-4 xl:ml-[200px] ml-0">
                     <h2 className="tradines text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[45px] !font-semibold">
@@ -195,7 +195,7 @@ const Pagesix = () => {
                     <p className="bitstartp text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] pt-[10px] sm:pt-[11px] md:pt-[12px] lg:pt-[13px] xl:pt-[14px] 2xl:pt-[15px]">
                     Bitstamp makes trading easy, fast & reliable. With live customer support, staking andbank-grade security & insurance.Trusted Crypto Exchange Since 2011.
                     </p>
-                    <div className='flex items-center justify-start gap-6'>
+                    <div className='flex items-center justify-between sm:justify-start gap-6 '>
                     <button className='buttonaudit cursor-pointer text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] flex items-center h-[36px] md:h-[40px] lg:h-[44px] xl:h-[48px] 2xl:h-[59px] px-[16px] sm:px-[20px] md:px-[24px] lg:px-[32px] xl:px-[36px] 2xl:px-[40px] group gap-[7.50px] mt-[24px] sm:mt-[32px] md:mt-[36px] lg:mt-[40px] xl:mt-[48px] 2xl:mt-[60px]'>
                     Get started
                     </button>
@@ -223,7 +223,7 @@ const Pagesix = () => {
                     </div>
                     </div>
                     </div>
-                    <div className="mySwiper col-span-12 sm:col-span-8  justify-center  ">
+                    <div className="mySwiper col-span-12 sm:col-span-8  justify-center sm:py-0 py-10 ">
                 <Swiper
                   modules={[Navigation, Autoplay]}
                   loop={true}
